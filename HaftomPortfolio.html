@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Haftom Abrha's portfolio showcasing software engineering skills and full-stack development projects.">
+<meta name="keywords" content="software engineer, full-stack developer, portfolio, web development, Spring Boot, React.js">
+<meta name="author" content="Haftom Abrha">
+
+    <title>Haftom Abrha | Professional Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styles */
+        header {
+            background: #007acc;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        header .container {
+            width: 80%;
+            margin: auto;
+        }
+        
+        header img.profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 200px;
+            border: 5px solid black;
+        }
+
+        header h1 {
+            margin-top: 0;
+        }
+
+        /* Navigation Styles */
+        nav ul {
+            background: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            display: block;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #007acc;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 2rem 0;
+            display: none; /* Hide sections by default */
+        }
+
+        .active {
+            display: block; /* Display active section */
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 100px;
+        }
+
+        /* Project Section Styles */
+        .project {
+            margin-bottom: 20px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.8s ease;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+        .project h3 {
+            color: #007acc;
+        }
+
+        /* Education and Hobbies Styles */
+        .education, .hobbies {
+            margin-bottom: 20px;
+        }
+
+        .education ul, .hobbies ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .education li, .hobbies li {
+            padding: 5px 0;
+            font-size: 1.1em;
+        }
+
+        /* Contact Section Styles */
+        .contact p {
+            font-size: 1.1em;
+        }
+
+        a {
+            color: #007acc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            header h1, header p {
+                font-size: 1.5em;
+            }
+
+            .container {
+                width: 90%;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            header img.profile-image {
+                width: 90px;
+                height: 90px;
+                left: 10px;
+                top: 10px;
+            }
+
+            footer {
+                font-size: 0.9em;
+            }
+        }
+		#education {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+}
+
+#education h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+.education-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.education-item h3 {
+    font-size: 1.5em;
+    color: #007BFF;
+}
+
+.education-item p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.education-item:hover {
+    border-color: #007BFF;
+    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.2);
+    transition: 0.3s;
+}
+
+.file-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.file-link:hover {
+    background-color: #0056b3;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="profile.jpg" alt="Haftom Abrha" class="profile-image">
+            <h1>Haftom Abrha</h1>
+            <p>Software Engineer | Full-Stack Developer</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a data-section="about">About Me</a></li>
+            <li><a data-section="skills">Skills</a></li>
+            <li><a data-section="projects">Projects</a></li>
+            <li><a data-section="education">Education</a></li>
+            <li><a data-section="hobbies">Hobbies</a></li>
+            <li><a data-section="contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="active">
+        <div class="container">
+            <h2>About Me</h2>
+      <p>Hi, I'm Haftom Abrha, a dedicated in software development with a 
+			passion for building innovative software solutions.
+			I am  full-stack developer, 
+			creating scalable systems, and 
+			I strive to deliver impactful projects that 
+			meet client and user needs.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li><strong>Languages:</strong> Java,c++, Python, JavaScript, SQL</li>
+                <li><strong>Frameworks:</strong> Spring Boot, React.js</li>
+                <li><strong>Databases:</strong> PostgreSQL, MySQL, MongoDB</li>
+                <li><strong>Aligorthims:</strong> API Development, Agile Methodologies</li>
+				<li><strong>Other Skills</strong> Hardware maintainance or Electronic  maintainance</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+    <div class="container">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3><a href="https://github.com/haftomabrha/calculator" target="_blank">Calculator</a></h3>
+            <p>A simple calculator application built using Android. It allows users to perform basic arithmetic operations.</p>
+        </div>
+        <div class="project">
+            <h3><a href="https://github.com/haftomabrha/desktop-tutorial" target="_blank">Desktop Tutorial</a></h3>
+            <p>A tutorial application for desktop environments, providing easy-to-understand instructions and guides.</p>
+        </div>
+        <div class="project">
+            <h3><a href="https://github.com/haftomabrha/MekeleuniversityCommunity" target="_blank">Mekele University Community</a></h3>
+            <p>A community platform for students and staff of Mekelle University. Built with Spring Boot and React.js, it facilitates communication and resource sharing.</p>
+        </div>
+        <div class="project">
+            <h3><a href="https://github.com/mulunehgerie/training1" target="_blank">Training1</a></h3>
+            <p>A training project with various exercises to help learners improve their programming skills.</p>
+        </div>
+        <div class="project">
+            <h3><a href="https://github.com/haftomabrha/demo1" target="_blank">Demo1</a></h3>
+            <p>A demo project showcasing simple functionality, ideal for testing and experimentation purposes.</p>
+        </div>
+        <div class="project">
+            <h3><a href="https://github.com/haftomabrha/gitDemo" target="_blank">GitDemo</a></h3>
+            <p>A simple demo project to showcase Git version control operations and branching strategies.</p>
+        </div>
+    </div>
+</section>
+
+
+   <section id="education">
+    <div class="container">
+        <h2>Education</h2>
+
+        <!-- Bachelor's Degree -->
+        <div class="education-item">
+            <h3>Bachelor's Degree in Software Engineering</h3>
+            <p><strong>Mekelle University</strong> | <em>Graduated:9/11/2024GC</em></p>
+            <a href="tempo.pdf" download="tempo.pdf" class="file-link">View Certificate</a>
+        </div>
+
+        <!-- Grade 8 Certificate -->
+        <div class="education-item">
+            <h3>Grade 8 Certificate</h3>
+            <p><strong>Addishihu Primary School</strong> | <em>Completed:Jun 2014GC</em></p>
+            <a href="grade8.pdf" download="grade8.pdf" class="file-link">View Certificate</a>
+        </div>
+
+        <!-- Grade 10 Certificate -->
+        <div class="education-item">
+            <h3>Grade 10 Certificate</h3>
+            <p><strong>Addishihu Secondary School</strong> | <em>Completed:Jun 2016GC</em></p>
+            <a href="grade10.pdf" download="grade10.pdf" class="file-link">View Certificate</a>
+        </div>
+
+        <!-- Grade 12 Certificate -->
+        <div class="education-item">
+            <h3>Grade 12 Certificate</h3>
+            <p><strong>Maychew Preparatory School</strong> | <em>Completed:jun 2018GC</em></p>
+            <a href="grade12.pdf" download="grade12pdf" class="file-link">View Certificate</a>
+        </div>
+
+        <!-- Exit Exam Certificate -->
+        <div class="education-item">
+		    <h2>PDRE,Mistry of Education,University exit exam</h2>
+            <p><strong>Mekelle University</strong> | <em>Completed: jun 2024</em></p>
+            <a href="exit.pdf" download="exit.pdf" class="file-link">View Certificate</a>
+        </div>
+    </div>
+</section>
+
+
+
+    <section id="hobbies">
+        <div class="container">
+            <h2>Hobbies</h2>
+            <ul>
+                <li>helping MY family</li>
+                <li>Coding side projects</li>
+                <li>Photography</li>
+                <li>Gaming</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:haftomabrha452@gmail.com">haftomabrha452@gmail.com</a></p>
+            <p>Phone: +251925049083</p>
+            <p>GitHub: <a href="https://github.com/haftomabrha" target="_blank">github.com/haftomabrha</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/haftomabrha" target="_blank">linkedin.com/in/haftomabrha</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Haftom Abrha. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('nav ul li a');
+        const sections = document.querySelectorAll('section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const targetSection = link.getAttribute('data-section');
+
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === targetSection) {
+                        section.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
