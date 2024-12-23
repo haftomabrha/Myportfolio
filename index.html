@@ -382,21 +382,13 @@
     </footer>
 
     <script>
-        const navLinks = document.querySelectorAll('nav ul li a');
-        const sections = document.querySelectorAll('section');
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                const targetSection = link.getAttribute('data-section');
-
-                sections.forEach(section => {
-                    section.classList.remove('active');
-                    if (section.id === targetSection) {
-                        section.classList.add('active');
-                    }
-                });
-            });
+        document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(this.dataset.section).classList.add('active');
         });
+    });
     </script>
 </body>
 </html>
