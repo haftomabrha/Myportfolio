@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Haftom Abrha's portfolio showcasing software engineering skills and full-stack development projects.">
-<meta name="keywords" content="software engineer, full-stack developer, portfolio, web development, Spring Boot, React.js">
-<meta name="author" content="Haftom Abrha">
+    <meta name="description" content="Haftom Abrha's portfolio showcasing software engineering skills and full-stack development projects.">
+    <meta name="keywords" content="software engineer, full-stack developer, portfolio, web development, Spring Boot, React.js">
+    <meta name="author" content="Haftom Abrha">
 
     <title>Haftom Abrha | Professional Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Include Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	
     <style>
         /* General Body Styles */
         body {
@@ -102,39 +105,244 @@
             padding: 1rem 0;
             margin-top: 100px;
         }
+		
+		
+		/* About Section */
+#about {
+    background-color: #f9f9f9;
+    padding: 80px 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
 
-        /* Project Section Styles */
-        .project {
-            margin-bottom: 20px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.8s ease;
-        }
+#about h2 {
+    font-size: 2.8em;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
 
-        .project:hover {
-            transform: scale(1.05);
-        }
+#about h2:hover {
+    color: #007BFF;
+}
 
-        .project h3 {
-            color: #007acc;
-        }
+/* About Paragraph */
+#about p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 800px;
+    transition: color 0.3s ease;
+}
 
-        /* Education and Hobbies Styles */
-        .education, .hobbies {
-            margin-bottom: 20px;
-        }
+#about p:hover {
+    color: #444;
+}
 
-        .education ul, .hobbies ul {
-            list-style-type: none;
-            padding: 0;
-        }
+/* Add a subtle box shadow */
+#about .container {
+    position: relative;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
 
-        .education li, .hobbies li {
-            padding: 5px 0;
-            font-size: 1.1em;
-        }
+#about .container:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #about h2 {
+        font-size: 2.2em;
+    }
+
+    #about p {
+        font-size: 1em;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #about h2 {
+        font-size: 1.8em;
+    }
+
+    #about p {
+        font-size: 0.9em;
+        padding: 0 10px;
+    }
+}
+
+
+       /* Projects Section */
+#projects {
+    background-color: #f0f4f8;
+    padding: 60px 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#projects h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#projects h2:hover {
+    color: #007BFF;
+}
+
+/* Projects List */
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    padding: 0 20px;
+    transition: gap 0.3s ease;
+}
+
+/* Project Item */
+.project-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-item h3 {
+    font-size: 1.6em;
+    color: #007BFF;
+    margin: 10px 0;
+}
+
+.project-item p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.project-item i {
+    font-size: 2.5em;
+    color: #007BFF;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover i {
+    transform: rotate(15deg);
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    #projects h2 {
+        font-size: 2em;
+    }
+    .project-item h3 {
+        font-size: 1.4em;
+    }
+    .project-item p {
+        font-size: 1em;
+    }
+}
+
+/* Hover Animation for Project Items */
+.project-item i {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.project-item:hover i {
+    color: #007BFF;
+    transform: scale(1.2);
+}
+
+/* Responsive Adjustments for Projects List */
+@media (max-width: 1024px) {
+    .projects-list {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* Education and Hobbies Styles */
+.education, .favorites {
+    margin-bottom: 40px;
+}
+
+.education ul, .favorites ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.education li, .favorites li {
+    width: calc(70% - 30px); /* Two items per row */
+    height: 50px; /* Set square height */
+    padding: 20px;
+    font-size: 1.1em;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    background-color: #f8f8f8;
+    border-radius: 18px; /* Rounded corners */
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.education li button, .favorites li button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.education li:hover, .favorites li:hover {
+    background-color: #e1f5fe;
+    transform: scale(1.05);
+}
+
+/* Adjust font size for mobile */
+@media (max-width: 768px) {
+    .education li, .favorites li {
+        font-size: 1em;
+        height: 120px; /* Adjust square size for mobile */
+    }
+    .education li button, .favorites li button {
+        font-size: 0.9em; /* Adjust button size for mobile */
+    }
+}
+
 
         /* Contact Section Styles */
         .contact p {
@@ -180,7 +388,9 @@
                 font-size: 0.9em;
             }
         }
-		#education {
+
+ /* Education Section Styles */
+#education {
     background-color: #f9f9f9;
     padding: 40px 0;
 }
@@ -192,17 +402,36 @@
     color: #333;
 }
 
-.education-item {
-    margin-bottom: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
+/* Grid layout for education items */
+#education .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Automatically adjust columns */
+    gap: 20px; /* Space between items */
+    padding: 0 20px;
 }
 
-.education-item h3 {
-    font-size: 1.5em;
+/* Education Item Styles */
+.education-item {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    text-align: center;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+/* Icon and Text Layout */
+.education-item i {
+    font-size: 3em;
     color: #007BFF;
+    margin-bottom: 15px;
+}
+
+/* Title and Paragraph inside each item */
+.education-item h3 {
+    font-size: 1.4em;
+    color: #007BFF;
+    margin-bottom: 10px;
 }
 
 .education-item p {
@@ -210,27 +439,349 @@
     color: #555;
 }
 
-.education-item:hover {
-    border-color: #007BFF;
-    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.2);
-    transition: 0.3s;
-}
-
-.file-link {
+.education-item a {
     display: inline-block;
     margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #007bff;
+    padding: 8px 15px;
+    background-color: #007BFF;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 0.9em;
+    transition: background-color 0.3s;
 }
 
-.file-link:hover {
+.education-item a:hover {
     background-color: #0056b3;
 }
 
+/* Hover effect for interactive feel */
+.education-item:hover {
+    border-color: #007BFF;
+    box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.2);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    background-color: #e1f5fe; /* Light blue background on hover */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .education-item {
+        height: auto; /* Allow height to adjust on smaller screens */
+    }
+
+    #education h2 {
+        font-size: 1.5em;
+    }
+
+    .education-item h3 {
+        font-size: 1.2em;
+    }
+}
+/* Favorites Section */
+#favorites {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+    
+}
+
+#favorites h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Grid Layout for Favorites */
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* Favorite Item Styles */
+.favorite-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.favorite-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: flex;
+}
+
+.favorite-item h3 {
+    padding: 10px;
+    color: #007BFF;
+    font-size: 1.2em;
+}
+
+/* Hover Effect */
+.favorite-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #favorites h2 {
+        font-size: 1.5em;
+    }
+
+    .favorite-item h3 {
+        font-size: 1em;
+    }
+}
+
+/* Skills Section */
+#skills {
+    background-color: #f0f4f8;
+    padding: 60px 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#skills h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#skills h2:hover {
+    color: #007BFF;
+}
+
+/* Skills List */
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    padding: 0 20px;
+    transition: gap 0.3s ease;
+}
+
+/* Skill Item */
+.skill-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.skill-item h3 {
+    font-size: 1.6em;
+    color: #007BFF;
+    margin: 10px 0;
+}
+
+.skill-item p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.skill-item i {
+    font-size: 2.5em;
+    color: #007BFF;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover i {
+    transform: rotate(15deg);
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    #skills h2 {
+        font-size: 2em;
+    }
+    .skill-item h3 {
+        font-size: 1.4em;
+    }
+    .skill-item p {
+        font-size: 1em;
+    }
+}
+
+/* Hover Animation for Skill Items */
+.skill-item i {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill-item:hover i {
+    color: #007BFF;
+    transform: scale(1.2);
+}
+
+/* Responsive Adjustments for Skills List */
+@media (max-width: 1024px) {
+    .skills-list {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+
+/* Contact Section Styles */
+#contact {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+/* Grid layout for contact items */
+#contact .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Automatically adjust columns */
+    gap: 20px; /* Space between items */
+    padding: 0 20px;
+}
+
+/* Contact Item Styles */
+.contact-item {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    text-align: center;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+/* Icon and Text Layout */
+.contact-item i {
+    font-size: 3em;
+    color: #007BFF;
+    margin-bottom: 15px;
+}
+
+/* Title and Paragraph inside each item */
+.contact-item h3 {
+    font-size: 1.4em;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.contact-item a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contact-item a:hover {
+    background-color: #0056b3;
+}
+
+/* Hover effect for interactive feel */
+.contact-item:hover {
+    border-color: #007BFF;
+    box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.2);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    background-color: #e1f5fe; /* Light blue background on hover */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .contact-item {
+        height: auto; /* Allow height to adjust on smaller screens */
+    }
+
+    #contact h2 {
+        font-size: 1.5em;
+    }
+
+    .contact-item h3 {
+        font-size: 1.2em;
+    }
+}
+
+
+<section id="skills">
+    <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <div class="skill-item">
+                <i class="fas fa-code"></i>
+                <h3>Languages</h3>
+                <p>Java, C++, Python, JavaScript, SQL</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-cogs"></i>
+                <h3>Frameworks</h3>
+                <p>Spring Boot, React.js</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-database"></i>
+                <h3>Databases</h3>
+                <p>PostgreSQL, MySQL, MongoDB</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Algorithms</h3>
+                <p>API Development, Agile Methodologies</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-tools"></i>
+                <h3>Other Skills</h3>
+                <p>Hardware maintenance, Electronic maintenance</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+        .file-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .file-link:hover {
+            background-color: #0056b3;
+        }
+		
 
     </style>
 </head>
@@ -245,135 +796,192 @@
 
     <nav>
         <ul>
-            <li><a data-section="about">About Me</a></li>
-            <li><a data-section="skills">Skills</a></li>
-            <li><a data-section="projects">Projects</a></li>
-            <li><a data-section="education">Education</a></li>
-            <li><a data-section="hobbies">Hobbies</a></li>
-            <li><a data-section="contact">Contact</a></li>
+            <li><a data-section="about"><i class="fas fa-user"></i> About Me</a></li>
+            <li><a data-section="skills"><i class="fas fa-cogs"></i> Skills</a></li>
+            <li><a data-section="projects"><i class="fas fa-briefcase"></i> Projects</a></li>
+            <li><a data-section="education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+            <li><a data-section="favorites"><i class="fas fa-futbol"></i> Favorite</a></li>
+            <li><a data-section="contact"><i class="fas fa-envelope"></i> Contact</a></li>
         </ul>
     </nav>
 
     <section id="about" class="active">
         <div class="container">
             <h2>About Me</h2>
-      <p>Hi, I'm Haftom Abrha, a dedicated in software development with a 
-			passion for building innovative software solutions.
-			I am  full-stack developer, 
-			creating scalable systems, and 
-			I strive to deliver impactful projects that 
-			meet client and user needs.</p>
+            <p>Hi, I'm Haftom Abrha, a dedicated software developer with a passion for building innovative software solutions. I am a full-stack developer, creating scalable systems, and I strive to deliver impactful projects that meet client and user needs.</p>
         </div>
     </section>
 
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul>
-                <li><strong>Languages:</strong> Java,c++, Python, JavaScript, SQL</li>
-                <li><strong>Frameworks:</strong> Spring Boot, React.js</li>
-                <li><strong>Databases:</strong> PostgreSQL, MySQL, MongoDB</li>
-                <li><strong>Aligorthims:</strong> API Development, Agile Methodologies</li>
-				<li><strong>Other Skills</strong> Hardware maintainance or Electronic  maintainance</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="projects">
+   <section id="skills">
     <div class="container">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3><a href="https://github.com/haftomabrha/calculator" target="_blank">Calculator</a></h3>
-            <p>A simple calculator application built using Android. It allows users to perform basic arithmetic operations.</p>
-        </div>
-        <div class="project">
-            <h3><a href="https://github.com/haftomabrha/desktop-tutorial" target="_blank">Desktop Tutorial</a></h3>
-            <p>A tutorial application for desktop environments, providing easy-to-understand instructions and guides.</p>
-        </div>
-        <div class="project">
-            <h3><a href="https://github.com/haftomabrha/MekeleuniversityCommunity" target="_blank">Mekele University Community</a></h3>
-            <p>A community platform for students and staff of Mekelle University. Built with Spring Boot and React.js, it facilitates communication and resource sharing.</p>
-        </div>
-        <div class="project">
-            <h3><a href="https://github.com/mulunehgerie/training1" target="_blank">Training1</a></h3>
-            <p>A training project with various exercises to help learners improve their programming skills.</p>
-        </div>
-        <div class="project">
-            <h3><a href="https://github.com/haftomabrha/demo1" target="_blank">Demo1</a></h3>
-            <p>A demo project showcasing simple functionality, ideal for testing and experimentation purposes.</p>
-        </div>
-        <div class="project">
-            <h3><a href="https://github.com/haftomabrha/gitDemo" target="_blank">GitDemo</a></h3>
-            <p>A simple demo project to showcase Git version control operations and branching strategies.</p>
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <div class="skill-item">
+                <i class="fas fa-code"></i>
+                <h3>Progrmaing Languages</h3>
+                <p>Java, C++, Python, JavaScript</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-cogs"></i>
+                <h3>Frameworks</h3>
+                <p>Spring Boot, React.js</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-database"></i>
+                <h3>Databases</h3>
+                <p>PostgreSQL, MySQL,SQL</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Algorithms</h3>
+                <p>API Development, Agile Methodologies</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-tools"></i>
+                <h3>Other Skills</h3>
+                <p>Hardware or Electronic maintenance</p>
+            </div>
         </div>
     </div>
 </section>
 
 
-   <section id="education">
+   <!-- Projects Section -->
+<section id="projects">
     <div class="container">
-        <h2>Education</h2>
+        <h2>Projects</h2>
+        <div class="projects-list">
+            <div class="project-item">
+                <h3><a href="https://github.com/haftomabrha/myprojects.git" target="_blank">View Projects<i class="fas fa-laptop"></i></a></h3>
+                <p>different visible projects.</p>
+            </div>
+            <div class="project-item">
+                <h3><a href="https://github.com/haftomabrha/MekeleuniversityCommunity" target="_blank">Automation System<i class="fas fa-university"></i></a></h3>
+                <p>A full-stack application for managing student registrations,grade management ,subject assignments and overall school man at Mekelle University Community School.
+			</p>
+            </div>
+        </div>
+    </div>
+</section>
 
+
+
+<section id="education">
+    <div class="container">
         <!-- Bachelor's Degree -->
         <div class="education-item">
+            <i class="fas fa-graduation-cap"></i> <!-- Icon for Graduation -->
             <h3>Bachelor's Degree in Software Engineering</h3>
-            <p><strong>Mekelle University</strong> | <em>Graduated:9/11/2024GC</em></p>
+            <p><strong>Mekelle University</strong> | <em>Graduated: 9/11/2024GC</em></p>
             <a href="tempo.pdf" download="tempo.pdf" class="file-link">View Certificate</a>
         </div>
 
         <!-- Grade 8 Certificate -->
         <div class="education-item">
+            <i class="fas fa-certificate"></i> <!-- Icon for Certificate -->
             <h3>Grade 8 Certificate</h3>
-            <p><strong>Addishihu Primary School</strong> | <em>Completed:Jun 2014GC</em></p>
+            <p><strong>Addishihu Primary School</strong> | <em>Completed: Jun 2014GC</em></p>
             <a href="grade8.pdf" download="grade8.pdf" class="file-link">View Certificate</a>
         </div>
 
         <!-- Grade 10 Certificate -->
         <div class="education-item">
+            <i class="fas fa-certificate"></i> <!-- Icon for Certificate -->
             <h3>Grade 10 Certificate</h3>
-            <p><strong>Addishihu Secondary School</strong> | <em>Completed:Jun 2016GC</em></p>
+            <p><strong>Addishihu Secondary School</strong> | <em>Completed: Jun 2016GC</em></p>
             <a href="grade10.pdf" download="grade10.pdf" class="file-link">View Certificate</a>
         </div>
 
         <!-- Grade 12 Certificate -->
         <div class="education-item">
+            <i class="fas fa-certificate"></i> <!-- Icon for Certificate -->
             <h3>Grade 12 Certificate</h3>
-            <p><strong>Maychew Preparatory School</strong> | <em>Completed:jun 2018GC</em></p>
+            <p><strong>Maychew Preparatory School</strong> | <em>Completed: Jun 2018GC</em></p>
             <a href="grade12.pdf" download="grade12pdf" class="file-link">View Certificate</a>
         </div>
 
         <!-- Exit Exam Certificate -->
         <div class="education-item">
-		    <h2>PDRE,Mistry of Education,University exit exam</h2>
-            <p><strong>Mekelle University</strong> | <em>Completed: jun 2024</em></p>
+            <i class="fas fa-school"></i> <!-- Icon for School -->
+            <h3>PDRE, Ministry of Education, University Exit Exam</h3>
+            <p><strong>Mekelle University</strong> | <em>Completed: Jun 2024</em></p>
             <a href="exit.pdf" download="exit.pdf" class="file-link">View Certificate</a>
+        </div>
+    </div>
+</section>
+
+   <section id="favorites">
+    <div class="container">
+        <h2>My Favorites</h2>
+        <div class="favorites-grid">
+            <!-- Watching Football -->
+            <div class="favorite-item">
+                <img src="liverpool.webp" alt="Watching Football">
+                <h3>Watching Football</h3>
+            </div>
+
+            <!-- Coding Side Projects -->
+            <div class="favorite-item">
+                <img src="coding.jpg" alt="Coding Side Projects">
+                <h3>Coding Side Projects</h3>
+            </div>
+
+            <!-- Vacation -->
+            <div class="favorite-item">
+                <img src="vacations.png" alt="Vacation">
+                <h3>Vacation</h3>
+            </div>
+
+            <!-- Gaming -->
+            <div class="favorite-item">
+                <img src="gaming.avif" alt="Gaming">
+                <h3>Gaming</h3>
+            </div>
         </div>
     </div>
 </section>
 
 
 
-    <section id="hobbies">
-        <div class="container">
-            <h2>Hobbies</h2>
-            <ul>
-                <li>helping MY family</li>
-                <li>Coding side projects</li>
-                <li>Photography</li>
-                <li>Gaming</li>
-            </ul>
+  <section id="contact">
+    <div class="container">
+        <!-- Email -->
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i> <!-- Icon for Email -->
+            <p><a href="mailto:haftomabrha452@gmail.com">Email</a></p>
         </div>
-    </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>Email: <a href="mailto:haftomabrha452@gmail.com">haftomabrha452@gmail.com</a></p>
-            <p>Phone: +251925049083</p>
-            <p>GitHub: <a href="https://github.com/haftomabrha" target="_blank">github.com/haftomabrha</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/haftomabrha" target="_blank">linkedin.com/in/haftomabrha</a></p>
+        <!-- Phone -->
+        <div class="contact-item">
+            <i class="fas fa-phone-alt"></i> <!-- Icon for Phone -->
+            <p><strong>Phone: </strong>+251925049083</p>
         </div>
-    </section>
+
+        <!-- GitHub -->
+        <div class="contact-item">
+            <i class="fab fa-github"></i> <!-- Icon for GitHub -->
+            <p><a href="https://github.com/haftomabrha" target="_blank">github</a></p>
+        </div>
+
+
+        <!-- Facebook -->
+        <div class="contact-item">
+            <i class="fab fa-facebook"></i> <!-- Icon for Facebook -->
+            <p><a href="https://web.facebook.com/haftom.abrha.75/" target="_blank">facebook</a></p>
+        </div>
+
+        <!-- Telegram -->
+        <div class="contact-item">
+            <i class="fab fa-telegram-plane"></i> <!-- Icon for Telegram -->
+            <p><a href="https://t.me/HaftomAbrhaAdhna" target="_blank">Telegram</a></p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
 
     <footer>
         <div class="container">
@@ -389,6 +997,7 @@
             document.getElementById(this.dataset.section).classList.add('active');
         });
     });
+	
     </script>
 </body>
 </html>
